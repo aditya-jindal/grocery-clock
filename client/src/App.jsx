@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom";
 import { TrashList } from "./TrashList";
 import { GroceriesList } from "./GroceriesList";
 import { RecipiesList } from "./RecipesList";
@@ -19,7 +19,7 @@ export default function App() {
       ) : (
         <BrowserRouter>
           <Routes>
-            <Route
+            {/* <Route
               path="/"
               element={
                 <RecipiesList
@@ -27,7 +27,8 @@ export default function App() {
                   setGroceries={setGroceries}
                 ></RecipiesList>
               }
-            />
+            /> */}
+            <Route path="/" element={<Redirect to="/recipes" />} />
             <Route
               path="recipes"
               element={
