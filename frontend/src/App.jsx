@@ -1,87 +1,11 @@
 import { useState } from "react";
-// import { Login } from "./Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { TrashList } from "./TrashList";
 import { GroceriesList } from "./GroceriesList";
-import { RecipiesList } from "./RecipiesList";
+import { RecipiesList } from "./RecipesList";
 import { Login } from "./Login";
 import { UploadImg } from "./UploadImg";
-
-const tempGroceries = [
-  {
-    name: "cauliflower",
-    image: "https://i.pravatar.cc/47",
-    qty: 250,
-    purchaseDate: new Date("2023-09-11").getTime(),
-    shelfLife: 5,
-    expiryDate: function () {
-      const newDate = new Date(this.purchaseDate);
-      newDate.setDate(newDate.getDate() + this.shelfLife);
-      return newDate.getTime();
-    },
-  },
-  {
-    name: "potato",
-    image: "https://i.pravatar.cc/48",
-    qty: 500,
-    purchaseDate: new Date("2023-09-12").getTime(),
-    shelfLife: 8,
-    expiryDate: function () {
-      const newDate = new Date(this.purchaseDate);
-      newDate.setDate(newDate.getDate() + this.shelfLife);
-      return newDate.getTime();
-    },
-  },
-  {
-    name: "onion",
-    image: "https://i.pravatar.cc/49",
-    qty: 750,
-    purchaseDate: new Date("2023-09-20").getTime(),
-    shelfLife: 12,
-    expiryDate: function () {
-      const newDate = new Date(this.purchaseDate);
-      newDate.setDate(newDate.getDate() + this.shelfLife);
-      return newDate.getTime();
-    },
-  },
-];
-const tempRecipies = [
-  {
-    name: "Alu Gobi Dry",
-    ingredients: [
-      ["cauliflower", "100g"],
-      ["potato", "100g"],
-      ["Oil", "2tbsp"],
-      ["Salt", "As per taste"],
-      ["Red Chilli Powder", "2 spoons"],
-    ],
-    image: "https://i.pravatar.cc/47",
-    prepTime: "25 mins",
-  },
-  {
-    name: "Alu Pyaz Dry",
-    ingredients: [
-      ["potato", "100g"],
-      ["onion", "80g"],
-      ["Oil", "2tbsp"],
-      ["Salt", "As per taste"],
-      ["Red Chilli Powder", "2 spoons"],
-    ],
-    image: "https://i.pravatar.cc/47",
-    prepTime: "15 mins",
-  },
-  {
-    name: "Alu Jeera",
-    ingredients: [
-      ["potato", "100g"],
-      ["Oil", "2tbsp"],
-      ["Salt", "As per taste"],
-      ["Red Chilli Powder", "2 spoons"],
-    ],
-    image: "https://i.pravatar.cc/47",
-    prepTime: "20 mins",
-  },
-];
+import { tempGroceries, tempRecipies } from "./test_data";
 
 export default function App() {
   const [isSubmitted, setIsSubmitted] = useState(true);

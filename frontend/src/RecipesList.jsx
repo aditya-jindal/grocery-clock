@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Header } from "./Header";
-import { RecipiePage } from "./RecipiePage";
-import { Recipie } from "./Recipie";
+import { RecipiePage } from "./RecipePage";
+import { Recipie } from "./Recipe";
 
 export function RecipiesList({ recipies, setGroceries }) {
   const [showRecipie, setShowRecipie] = useState("");
