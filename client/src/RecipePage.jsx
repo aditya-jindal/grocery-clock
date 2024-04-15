@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { Header } from "./Header";
 
-export function RecipiePage({ recipie, setGroceries, setShowRecipie }) {
+export function RecipiePage({ recipie, setShowRecipie }) {
   return (
     <div>
       <Header>Your Cookbook!</Header>
@@ -14,10 +14,20 @@ export function RecipiePage({ recipie, setGroceries, setShowRecipie }) {
             /> */}
       </Link>
 
-      {/* <img src={recipie.image} alt={recipie.name} /> */}
+      <img src={recipie.image} alt={recipie.name} />
       <h1>{recipie.name}</h1>
       <p>Preparation Time: {recipie.prepTime}</p>
-      <p>Serves 2</p>
+      <p>Serves {recipie.serves}</p>
+      <p>Ingredients</p>
+      <ul>
+        {recipie.ingredients.map((ingredient) => (
+          <li key={ingredient[0]}>
+            {ingredient[0]} - {ingredient[1]}
+          </li>
+        ))}
+      </ul>
+      <p>Summary</p>
+      <div dangerouslySetInnerHTML={{ __html: recipie.description }} />
       <button onClick={() => setShowRecipie(false)}>Go Back</button>
     </div>
   );

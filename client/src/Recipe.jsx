@@ -6,8 +6,8 @@ export function Recipie({ recipie, setShowRecipie, recipies }) {
       }
     >
       <h1>{recipie.name}</h1>
-      {/* <img src={recipie.image} alt={recipie.name} /> */}
-      <p>Preparation Time: {recipie.prepTime}</p>
+      <img src={recipie.image} alt={recipie.name} />
+      <p>Preparation Time: {recipie.prepTime} mins</p>
     </div>
   );
 }

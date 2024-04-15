@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { TrashList } from "./TrashList";
 import { GroceriesList } from "./GroceriesList";
 import { RecipiesList } from "./RecipesList";
@@ -8,7 +8,7 @@ import { UploadImg } from "./UploadImg";
 import { tempGroceries, tempRecipies } from "./test_data";
 
 export default function App() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(true);
   const [groceries, setGroceries] = useState(tempGroceries);
   const [recipies, setRecipies] = useState(tempRecipies);
   const [trash, setTrash] = useState([]);
@@ -19,22 +19,15 @@ export default function App() {
       ) : (
         <BrowserRouter>
           <Routes>
-            {/* <Route
-              path="/"
-              element={
-                <RecipiesList
-                  recipies={recipies}
-                  setGroceries={setGroceries}
-                ></RecipiesList>
-              }
-            /> */}
-            <Route path="/" element={<Redirect to="/recipes" />} />
+            <Route index element={<Navigate to="/recipes" />} />
             <Route
               path="recipes"
               element={
                 <RecipiesList
                   recipies={recipies}
-                  setGroceries={setGroceries}
+                  setRecipes={setRecipies}
+                  groceries={groceries}
+                  // setGroceries={setGroceries}
                 ></RecipiesList>
               }
             />
@@ -60,7 +53,10 @@ export default function App() {
                 />
               }
             />
-            <Route path="uploadImg" element={<UploadImg />} />
+            <Route
+              path="uploadImg"
+              element={<UploadImg setGroceries={setGroceries} />}
+            />
           </Routes>
         </BrowserRouter>
       )}
