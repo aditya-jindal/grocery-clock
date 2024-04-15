@@ -8,7 +8,7 @@ import { UploadImg } from "./UploadImg";
 import { tempGroceries, tempRecipies } from "./test_data";
 
 export default function App() {
-  const [isSubmitted, setIsSubmitted] = useState(true);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [groceries, setGroceries] = useState(tempGroceries);
   const [recipies, setRecipies] = useState(tempRecipies);
   const [trash, setTrash] = useState([]);
