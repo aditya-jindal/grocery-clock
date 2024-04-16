@@ -17,7 +17,7 @@ export default function App() {
     setIsSubmitted(false);
   };
   return (
-    <div className="bg-stone-100 flex flex-col items-center w-screen">
+    <div className="bg-stone-100 flex flex-col items-center w-screen min-h-screen">
       {!isSubmitted ? (
         <Login setIsSubmitted={setIsSubmitted} />
       ) : (

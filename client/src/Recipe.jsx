@@ -4,7 +4,7 @@ export function Recipie({ recipie, setShowRecipie, recipies }) {
       onClick={() =>
         setShowRecipie(...recipies.filter((val) => val.name === recipie.name))
       }
-      className="flex h-40 border-2 border-black mx-3 rounded-xl justify-between"
+      className="flex border-2 border-black mx-3 rounded-xl justify-between"
     >
       <img
         src={recipie.image}
