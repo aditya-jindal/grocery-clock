@@ -7,9 +7,9 @@ export function RecipiePage({ recipie, setShowRecipie }) {
   }, []);
 
   return (
-    <div>
+    <div className="px-4">
       <Header>Your Cookbook!</Header>
-      <button onClick={() => setShowRecipie(false)} className="mb-4">
+      <button onClick={() => setShowRecipie(false)} className="mb-4 text-blue-400">
         &larr; Go Back
       </button>
 
