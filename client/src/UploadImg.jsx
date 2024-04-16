@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Header } from "./Header";
 
-export function UploadImg() {
+export function UploadImg({ setGroceries }) {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (event) => {
@@ -16,22 +16,21 @@ export function UploadImg() {
       }
 
       const formData = new FormData();
-      formData.append("name", "Avanish");
       formData.append("image", selectedFile);
 
-      // Replace 'YOUR_DJANGO_API_ENDPOINT' with the actual URL of your Django API endpoint
-      const response = await fetch(
-        "http://192.168.134.95:8000/imgr/",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await fetch("http://192.168.134.95:8000/imgr/", {
+        method: "POST",
+        body: formData,
+      });
 
-      console.log("Upload successful", response.data);
-      // Optionally, you can reset the selected file after successful upload
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      console.log("Upload successful", data);
+      setGroceries((oldGroceries) => [...oldGroceries, ...data]);
       setSelectedFile(null);
     } catch (error) {
       console.error("Error uploading image", error);
