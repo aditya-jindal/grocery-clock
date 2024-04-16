@@ -13,7 +13,7 @@ export default function App() {
   const [recipies, setRecipies] = useState(tempRecipies);
   const [trash, setTrash] = useState([]);
   return (
-    <div className="bg-yellow-500">
+    <div className="App">
       {!isSubmitted ? (
         <Login setIsSubmitted={setIsSubmitted} />
       ) : (

@@ -39,13 +39,13 @@ export function Login({setIsSubmitted }) {
     name === errorMessages.name && <div>{errorMessages.message}</div>;
 
   return (
-    <div className="text-2xl">
+    <div>
       <div>
-        <div className="bg-green-500 text-center text-red-700">Sign In</div>
+        <div>Sign In</div>
         <div>
           <form onSubmit={handleSubmit}>
             <div>
-              <label className="bg-indigo-500 flex justify-center align-middle  text-red-700">Username </label>
+              <label>Username </label>
               <input
                 type="text"
                 name="uname"
