@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Header } from "./Header";
 
 export function UploadImg() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -39,7 +40,7 @@ export function UploadImg() {
 
   return (
     <div>
-      <div>New Groceries !</div>
+      <Header>New Groceries !</Header>
       <div>Upload an Image</div>
 
       <div>

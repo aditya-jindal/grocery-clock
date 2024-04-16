@@ -4,6 +4,9 @@ export function RecipiePage({ recipie, setShowRecipie }) {
   return (
     <div>
       <Header>Your Cookbook!</Header>
+      <button onClick={() => setShowRecipie(false)} className="mb-4">
+        &larr; Go Back
+      </button>
 
       <img src={recipie.image} alt={recipie.name} />
       <h1>{recipie.name}</h1>
@@ -19,7 +22,6 @@ export function RecipiePage({ recipie, setShowRecipie }) {
       </ul>
       <p>Summary</p>
       <div dangerouslySetInnerHTML={{ __html: recipie.description }} />
-      <button onClick={() => setShowRecipie(false)}>Go Back</button>
     </div>
   );
 }

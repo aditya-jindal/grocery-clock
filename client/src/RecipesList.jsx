@@ -80,8 +80,8 @@ export function RecipiesList({
     </div>
   ) : (
     <div>
-      <Header>Explore Recipes</Header>
-      <div>
+      <Header>Explore Recipes!</Header>
+      <div className="flex flex-col gap-y-4">
         {recipies.map((recipie) => (
           <Recipie
             recipie={recipie}
