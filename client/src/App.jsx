@@ -18,11 +18,11 @@ export default function App() {
   };
   return (
     <div className="bg-stone-100 flex flex-col items-center w-screen min-h-screen tracking-wide text-stone-700">
-      {!isSubmitted ? (
-        <Login setIsSubmitted={setIsSubmitted} />
-      ) : (
-        <BrowserRouter>
-          <NavBar handleLogout={handleLogout} />
+      <BrowserRouter>
+        <NavBar isSubmitted={isSubmitted} handleLogout={handleLogout} />
+        {!isSubmitted ? (
+          <Login setIsSubmitted={setIsSubmitted} />
+        ) : (
           <Routes>
             <Route index element={<Navigate to="/recipes" />} />
             <Route
@@ -62,8 +62,8 @@ export default function App() {
               element={<UploadImg setGroceries={setGroceries} />}
             />
           </Routes>
-        </BrowserRouter>
-      )}
+        )}
+      </BrowserRouter>
     </div>
   );
 }

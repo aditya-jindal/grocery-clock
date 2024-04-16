@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Header } from "./Header";
 
 export function Login({setIsSubmitted }) {
   const [errorMessages, setErrorMessages] = useState({});
@@ -40,7 +41,7 @@ export function Login({setIsSubmitted }) {
 
   return (
       <div>
-        <div>Sign In</div>
+        <Header>Sign In</Header>
         <div>
           <form onSubmit={handleSubmit}>
             <div>
