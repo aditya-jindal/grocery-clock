@@ -39,7 +39,6 @@ export function Login({setIsSubmitted }) {
     name === errorMessages.name && <div>{errorMessages.message}</div>;
 
   return (
-    <div>
       <div>
         <div>Sign In</div>
         <div>
@@ -72,6 +71,5 @@ export function Login({setIsSubmitted }) {
           </form>
         </div>
       </div>
-    </div>
   );
 }
