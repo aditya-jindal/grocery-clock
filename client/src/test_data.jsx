@@ -132,67 +132,8 @@ export const tempGroceries = [
     },
   },
 ];
-// export const tempRecipies = [
-// {
-//   name: "Alu Gobi Dry",
-//   ingredients: [
-//     ["cauliflower", "100g"],
-//     ["potato", "100g"],
-//     ["Oil", "2tbsp"],
-//     ["Salt", "As per taste"],
-//     ["Red Chilli Powder", "2 spoons"],
-//   ],
-//   image: "https://i.pravatar.cc/47",
-//   prepTime: "25 mins",
-//   description: "",
-// },
-// {
-//   name: "Alu Pyaz Dry",
-//   ingredients: [
-//     ["potato", "100g"],
-//     ["onion", "80g"],
-//     ["Oil", "2tbsp"],
-//     ["Salt", "As per taste"],
-//     ["Red Chilli Powder", "2 spoons"],
-//   ],
-//   image: "https://i.pravatar.cc/47",
-//   prepTime: "15 mins",
-// },
-// {
-//   name: "Alu Jeera",
-//   ingredients: [
-//     ["potato", "100g"],
-//     ["Oil", "2tbsp"],
-//     ["Salt", "As per taste"],
-//     ["Red Chilli Powder", "2 spoons"],
-//   ],
-//   image: "https://i.pravatar.cc/47",
-//   prepTime: "20 mins",
-// },
-// ];
 
 export const tempRecipies = [
-  {
-    name: "Ethiopian Lentil Curry",
-    ingredients: [
-      ["amchar masala", "1tablespoon"],
-      ["brown lentils", "1cup"],
-      ["canned tomatoes", "1can"],
-      ["cauliflower head", "1"],
-      ["garlic cloves", "2"],
-      ["onion", "1"],
-      ["peas", "2cups"],
-      ["yogurt", "0.25cup"],
-      ["masala molida", "2tablespoons"],
-      ["tomato paste", "1can"],
-      ["vegetable oil", "2tablespoons"],
-    ],
-    image: "https://img.spoonacular.com/recipes/642468-556x370.jpg",
-    prepTime: 75,
-    description:
-      'If you have approximately <b>1 hour and 15 minutes</b> to spend in the kitchen, Ethiopian Lentil Curry might be an excellent <b>gluten free and lacto ovo vegetarian</b> recipe to try. One portion of this dish contains about <b>16g of protein</b>, <b>6g of fat</b>, and a total of <b>285 calories</b>. For <b>$1.45 per serving</b>, you get a main course that serves 6. If you have onion, peas, vegetable oil, and a few other ingredients on hand, you can make it. This recipe is typical of Indian cuisine. Only a few people made this recipe, and 3 would say it hit the spot. It is brought to you by Foodista. All things considered, we decided this recipe <b>deserves a spoonacular score of 92%</b>. This score is excellent. If you like this recipe, take a look at these similar recipes: <a href="https://spoonacular.com/recipes/spicy-ethiopian-red-lentil-stew-33758">Spicy Ethiopian Red Lentil Stew</a>, <a href="https://spoonacular.com/recipes/misir-wot-ethiopian-red-lentil-stew-1437013">Misir Wot- Ethiopian Red Lentil Stew</a>, and <a href="https://spoonacular.com/recipes/ethiopian-s-mesir-wat-red-lentil-stew-with-ayib-552200">Ethiopian s: Mesir Wat Red Lentil Stew with Ayib</a>.',
-    serves: 6,
-  },
   {
     name: "Savoy Cabbage and Celery Root Soup with Leek Confit",
     ingredients: [
@@ -295,5 +236,26 @@ export const tempRecipies = [
     description:
       'The recipe Pork Menudo can be made <b>in approximately 45 minutes</b>. One serving contains <b>990 calories</b>, <b>38g of protein</b>, and <b>49g of fat</b>. For <b>$4.54 per serving</b>, this recipe <b>covers 42%</b> of your daily requirements of vitamins and minerals. This recipe serves 4. 3 people have made this recipe and would make it again. This recipe from Foodista requires size bell pepper, bell pepper, potatoes, and chorizo. It works well as a rather pricey main course. It is a good option if you\'re following a <b>gluten free and dairy free</b> diet. All things considered, we decided this recipe <b>deserves a spoonacular score of 83%</b>. This score is super. If you like this recipe, take a look at these similar recipes: <a href="https://spoonacular.com/recipes/pork-menudo-1423925">Pork Menudo</a>, <a href="https://spoonacular.com/recipes/pork-menudo-1259415">Pork Menudo</a>, and <a href="https://spoonacular.com/recipes/pork-menudo-1497429">Pork Menudo</a>.',
     serves: 4,
+  },
+  {
+    name: "Ethiopian Lentil Curry",
+    ingredients: [
+      ["amchar masala", "1tablespoon"],
+      ["brown lentils", "1cup"],
+      ["canned tomatoes", "1can"],
+      ["cauliflower head", "1"],
+      ["garlic cloves", "2"],
+      ["onion", "1"],
+      ["peas", "2cups"],
+      ["yogurt", "0.25cup"],
+      ["masala molida", "2tablespoons"],
+      ["tomato paste", "1can"],
+      ["vegetable oil", "2tablespoons"],
+    ],
+    image: "https://img.spoonacular.com/recipes/642468-556x370.jpg",
+    prepTime: 75,
+    description:
+      'If you have approximately <b>1 hour and 15 minutes</b> to spend in the kitchen, Ethiopian Lentil Curry might be an excellent <b>gluten free and lacto ovo vegetarian</b> recipe to try. One portion of this dish contains about <b>16g of protein</b>, <b>6g of fat</b>, and a total of <b>285 calories</b>. For <b>$1.45 per serving</b>, you get a main course that serves 6. If you have onion, peas, vegetable oil, and a few other ingredients on hand, you can make it. This recipe is typical of Indian cuisine. Only a few people made this recipe, and 3 would say it hit the spot. It is brought to you by Foodista. All things considered, we decided this recipe <b>deserves a spoonacular score of 92%</b>. This score is excellent. If you like this recipe, take a look at these similar recipes: <a href="https://spoonacular.com/recipes/spicy-ethiopian-red-lentil-stew-33758">Spicy Ethiopian Red Lentil Stew</a>, <a href="https://spoonacular.com/recipes/misir-wot-ethiopian-red-lentil-stew-1437013">Misir Wot- Ethiopian Red Lentil Stew</a>, and <a href="https://spoonacular.com/recipes/ethiopian-s-mesir-wat-red-lentil-stew-with-ayib-552200">Ethiopian s: Mesir Wat Red Lentil Stew with Ayib</a>.',
+    serves: 6,
   },
 ];
