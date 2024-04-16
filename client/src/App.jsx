@@ -6,18 +6,23 @@ import { RecipiesList } from "./RecipesList";
 import { Login } from "./Login";
 import { UploadImg } from "./UploadImg";
 import { tempGroceries, tempRecipies } from "./test_data";
+import NavBar from "./NavBar";
 
 export default function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [groceries, setGroceries] = useState(tempGroceries);
   const [recipies, setRecipies] = useState(tempRecipies);
   const [trash, setTrash] = useState([]);
+  const handleLogout = function () {
+    setIsSubmitted(false);
+  };
   return (
     <div className="App">
       {!isSubmitted ? (
         <Login setIsSubmitted={setIsSubmitted} />
       ) : (
         <BrowserRouter>
+          <NavBar handleLogout={handleLogout} />
           <Routes>
             <Route index element={<Navigate to="/recipes" />} />
             <Route
@@ -27,7 +32,6 @@ export default function App() {
                   recipies={recipies}
                   setRecipes={setRecipies}
                   groceries={groceries}
-                  // setGroceries={setGroceries}
                 ></RecipiesList>
               }
             />

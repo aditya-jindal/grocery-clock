@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { Header } from "./Header";
 import { RecipiePage } from "./RecipePage";
 import { Recipie } from "./Recipe";
@@ -91,19 +90,6 @@ export function RecipiesList({
             key={recipie}
           />
         ))}
-      </div>
-      <div>
-        <Link to="/groceries">
-          Groceries
-          {/* <img
-              class="icon-shopping-bag"
-              src={require("./img/icon-shopping-bag.png")}
-            /> */}
-        </Link>
-        <Link to="/uploadImg">
-          UploadImg
-          {/* <img class="icon-camera" src={require("./img/icon-camera.png")} /> */}
-        </Link>
       </div>
     </div>
   );

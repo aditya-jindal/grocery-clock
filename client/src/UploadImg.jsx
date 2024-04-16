@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 export function UploadImg() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -47,19 +46,6 @@ export function UploadImg() {
         <input type="file" onChange={handleFileChange} />
         <button onClick={handleUpload}>Upload</button>
         {selectedFile && <p>Selected File: {selectedFile.name}</p>}
-      </div>
-      <div>
-        <Link to="/groceries">
-          Groceries
-          {/* <img
-              class="icon-shopping-bag"
-              src={require("./img/icon-shopping-bag.png")}
-            /> */}
-        </Link>
-        <Link to="/recipes">
-          Recipes
-          {/* <img class="icon-home" src={require("./img/icon-home.png")} /> */}
-        </Link>
       </div>
     </div>
   );

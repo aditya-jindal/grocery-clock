@@ -1,18 +1,9 @@
-// import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Header } from "./Header";
 
 export function RecipiePage({ recipie, setShowRecipie }) {
   return (
     <div>
       <Header>Your Cookbook!</Header>
-      <Link to="/groceries">
-        Groceries
-        {/* <img
-              class="icon-shopping-bag"
-              src={require("./img/icon-shopping-bag.png")}
-            /> */}
-      </Link>
 
       <img src={recipie.image} alt={recipie.name} />
       <h1>{recipie.name}</h1>
