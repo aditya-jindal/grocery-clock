@@ -31,12 +31,12 @@ def upload_file():
         The output should be an array in the format:
         [
             {
-                name: "cauliflower",
-                shelfLife: 7,
+                "name": "cauliflower",
+                "shelfLife": 7,
             },
             {
-                name: "potato",
-                shelfLife: 21,
+                "name": "potato",
+                "shelfLife": 21,
             },
         ]
         Don't repond with anything other than this format.
