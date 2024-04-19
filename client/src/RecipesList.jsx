@@ -26,7 +26,7 @@ export function RecipiesList({
         console.error("Error:", error);
       }
     };
-    testing && fetchRecipes();
+    !testing && fetchRecipes();
   }, [groceries, setRecipes, testing]);
 
   useEffect(() => {
@@ -65,29 +65,25 @@ export function RecipiesList({
         console.error("Error:", error);
       }
     };
-    testing && fetchRecipes();
+    !testing && fetchRecipes();
   }, [recipeIDs, setRecipes, testing]);
 
   console.log("recipes:");
   console.log(recipies);
   return showRecipie ? (
     <div>
-      <RecipiePage
-        recipie={showRecipie}
-        // setGroceries={setGroceries}
-        setShowRecipie={setShowRecipie}
-      />
+      <RecipiePage recipie={showRecipie} setShowRecipie={setShowRecipie} />
     </div>
   ) : (
     <div>
       <Header>Explore Recipes!</Header>
       <div className="flex flex-col gap-y-4">
-        {recipies.map((recipie) => (
+        {recipies.map((recipie, index) => (
           <Recipie
             recipie={recipie}
             setShowRecipie={setShowRecipie}
             recipies={recipies}
-            key={recipie}
+            key={index}
           />
         ))}
       </div>

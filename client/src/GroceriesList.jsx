@@ -7,13 +7,13 @@ export function GroceriesList({ groceries, setGroceries, trash, setTrash }) {
       <Header>The Fridge!</Header>
 
       <div>
-        {groceries.map((grocery) => (
+        {groceries.map((grocery, index) => (
           <Grocery
             grocery={grocery}
             setGroceries={setGroceries}
             trash={trash}
             setTrash={setTrash}
-            key={grocery.name}
+            key={index}
           />
         ))}
       </div>

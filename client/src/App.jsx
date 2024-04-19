@@ -32,6 +32,7 @@ export default function App() {
                   recipies={recipies}
                   setRecipes={setRecipies}
                   groceries={groceries}
+                  testing = {true}
                 ></RecipiesList>
               }
             />

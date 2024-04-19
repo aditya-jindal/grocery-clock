@@ -19,8 +19,8 @@ export function RecipiePage({ recipie, setShowRecipie }) {
       <p>Serves {recipie.serves}</p>
       <p>Ingredients</p>
       <ul>
-        {recipie.ingredients.map((ingredient) => (
-          <li key={ingredient[0]}>
+        {recipie.ingredients.map((ingredient, index) => (
+          <li key={index}>
             {ingredient[0]} - {ingredient[1]}
           </li>
         ))}

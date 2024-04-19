@@ -7,13 +7,13 @@ export function TrashList({ setGroceries, trash, setTrash }) {
       <Header>The Trash!</Header>{" "}
       <h1 style={{ textAlign: "right" }}>YEETUS DELETUS</h1>
       <div>
-        {trash.map((grocery) => (
+        {trash.map((grocery, index) => (
           <TrashGrocery
             grocery={grocery}
             setGroceries={setGroceries}
             trash={trash}
             setTrash={setTrash}
-            key={grocery.name}
+            key={index}
           />
         ))}
       </div>
