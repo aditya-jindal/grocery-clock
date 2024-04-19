@@ -12,17 +12,21 @@ export function GroceriesList({ groceries, setGroceries, trash, setTrash }) {
     <div>
       <Header>The Fridge!</Header>
 
-      <div>
-        {sortedGroceries.map((grocery, index) => (
-          <Grocery
-            grocery={grocery}
-            setGroceries={setGroceries}
-            trash={trash}
-            setTrash={setTrash}
-            key={index}
-          />
-        ))}
-      </div>
+      {groceries.length ? (
+        <div>
+          {sortedGroceries.map((grocery, index) => (
+            <Grocery
+              grocery={grocery}
+              setGroceries={setGroceries}
+              trash={trash}
+              setTrash={setTrash}
+              key={index}
+            />
+          ))}
+        </div>
+      ) : (
+        <p>Upload a receipt to get started</p>
+      )}
     </div>
   );
 }

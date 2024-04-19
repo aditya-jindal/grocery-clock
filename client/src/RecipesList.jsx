@@ -3,8 +3,9 @@ import { Header } from "./Header";
 import { RecipiePage } from "./RecipePage";
 import { Recipie } from "./Recipe";
 
-const SPOONACULAR_API_KEY_1 = "";
-const SPOONACULAR_API_KEY_2 = "";
+const SPOONACULAR_API_KEY_1 = import.meta.env.VITE_APP_SPOONACULAR_API_KEY_1;
+const SPOONACULAR_API_KEY_2 = import.meta.env.VITE_APP_SPOONACULAR_API_KEY_2;
+
 export function RecipiesList({
   recipies,
   setRecipes,
@@ -56,6 +57,7 @@ export function RecipiesList({
         if (!response.ok) {
           throw new Error("API request failed");
         }
+        console.log("fetched");
         const data = await response.json();
         // console.log(data);
         const ans = {
@@ -87,10 +89,9 @@ export function RecipiesList({
       }
     };
     !testing && fetchRecipes();
-    console.log("fetched");
   }, [recipeIDs, setRecipes, testing]);
 
-  console.log("recipes:");
+  console.log("recipies:");
   console.log(recipies);
   return showRecipie ? (
     <div>
@@ -99,16 +100,21 @@ export function RecipiesList({
   ) : (
     <div>
       <Header>Explore Recipes !</Header>
-      <div className="flex flex-col gap-y-4">
-        {recipies.map((recipie, index) => (
-          <Recipie
-            recipie={recipie}
-            setShowRecipie={setShowRecipie}
-            recipies={recipies}
-            key={index}
-          />
-        ))}
-      </div>
+
+      {recipies.length ? (
+        <div className="flex flex-col gap-y-4">
+          {recipies.map((recipie, index) => (
+            <Recipie
+              recipie={recipie}
+              setShowRecipie={setShowRecipie}
+              recipies={recipies}
+              key={index}
+            />
+          ))}
+        </div>
+      ) : (
+        <p>Upload a receipt to get started</p>
+      )}
     </div>
   );
 }
