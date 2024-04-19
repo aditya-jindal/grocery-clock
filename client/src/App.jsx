@@ -8,10 +8,12 @@ import { UploadImg } from "./UploadImg";
 import { tempGroceries, tempRecipies } from "./test_data";
 import NavBar from "./NavBar";
 
+const TESTING = true;
+
 export default function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [groceries, setGroceries] = useState(tempGroceries);
-  const [recipies, setRecipies] = useState(tempRecipies);
+  const [groceries, setGroceries] = useState(TESTING ? tempGroceries : []);
+  const [recipies, setRecipies] = useState(TESTING ? tempRecipies : []);
   const [trash, setTrash] = useState([]);
   const handleLogout = function () {
     setIsSubmitted(false);
@@ -32,7 +34,7 @@ export default function App() {
                   recipies={recipies}
                   setRecipes={setRecipies}
                   groceries={groceries}
-                  testing = {true}
+                  testing={TESTING}
                 ></RecipiesList>
               }
             />

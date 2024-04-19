@@ -3,7 +3,8 @@ import { Header } from "./Header";
 import { RecipiePage } from "./RecipePage";
 import { Recipie } from "./Recipe";
 
-const SPOONACULAR_API_KEY = "";
+const SPOONACULAR_API_KEY_1 = "";
+const SPOONACULAR_API_KEY_2 = "";
 export function RecipiesList({
   recipies,
   setRecipes,
@@ -12,14 +13,26 @@ export function RecipiesList({
 }) {
   const [showRecipie, setShowRecipie] = useState("");
   const [recipeIDs, setRecipeIDs] = useState([]);
-
+  const sortedGroceries = groceries.sort(
+    (a, b) => a.expiryDate() - b.expiryDate()
+  );
   useEffect(() => {
-    const ingredients = groceries.map((grocery) => grocery.name).join(",");
+    const ingredients = sortedGroceries
+      .slice(0, 4)
+      .map((grocery) => grocery.name)
+      .join(",");
     const fetchRecipes = async function () {
       try {
-        const response = await fetch(
-          `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${SPOONACULAR_API_KEY}&ingredients=${ingredients}&number=5`
+        let response = await fetch(
+          `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${SPOONACULAR_API_KEY_1}&ingredients=${ingredients}&number=5`
         );
+        if (!response.ok)
+          response = await fetch(
+            `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${SPOONACULAR_API_KEY_2}&ingredients=${ingredients}&number=5`
+          );
+        if (!response.ok) {
+          throw new Error("API request failed");
+        }
         const data = await response.json();
         setRecipeIDs(() => data.map((recipe) => recipe.id));
       } catch (error) {
@@ -27,14 +40,22 @@ export function RecipiesList({
       }
     };
     !testing && fetchRecipes();
-  }, [groceries, setRecipes, testing]);
+  }, [sortedGroceries, setRecipes, testing]);
 
   useEffect(() => {
     const getFullRecipe = async function (recipeID) {
       try {
-        const response = await fetch(
-          `https://api.spoonacular.com/recipes/${recipeID}/information?apiKey=${SPOONACULAR_API_KEY}&includeNutrition=false&addWinePairing=false&addTasteData=false`
+        let response = await fetch(
+          `https://api.spoonacular.com/recipes/${recipeID}/information?apiKey=${SPOONACULAR_API_KEY_1}&includeNutrition=false&addWinePairing=false&addTasteData=false`
         );
+        if (!response.ok) {
+          response = await fetch(
+            `https://api.spoonacular.com/recipes/${recipeID}/information?apiKey=${SPOONACULAR_API_KEY_2}&includeNutrition=false&addWinePairing=false&addTasteData=false`
+          );
+        }
+        if (!response.ok) {
+          throw new Error("API request failed");
+        }
         const data = await response.json();
         // console.log(data);
         const ans = {
@@ -66,6 +87,7 @@ export function RecipiesList({
       }
     };
     !testing && fetchRecipes();
+    console.log("fetched");
   }, [recipeIDs, setRecipes, testing]);
 
   console.log("recipes:");
@@ -76,7 +98,7 @@ export function RecipiesList({
     </div>
   ) : (
     <div>
-      <Header>Explore Recipes!</Header>
+      <Header>Explore Recipes !</Header>
       <div className="flex flex-col gap-y-4">
         {recipies.map((recipie, index) => (
           <Recipie

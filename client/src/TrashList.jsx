@@ -4,8 +4,8 @@ import { TrashGrocery } from "./TrashGrocery";
 export function TrashList({ setGroceries, trash, setTrash }) {
   return (
     <div>
-      <Header>The Trash!</Header>{" "}
-      <h1 style={{ textAlign: "right" }}>YEETUS DELETUS</h1>
+      <Header>The Trash !</Header>{" "}
+      <h1 style={{ textAlign: "center" }}>YEETUS DELETUS</h1>
       <div>
         {trash.map((grocery, index) => (
           <TrashGrocery
