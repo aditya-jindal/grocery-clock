@@ -33,7 +33,7 @@ export function UploadImg({ setGroceries }) {
       const dataArray = JSON.parse(data);
       const newGroceries = dataArray.map((grocery) => ({
         name: grocery.name,
-        shelfLife: grocery.shelfLife,
+        shelfLife: Number(grocery.shelfLife),
         purchaseDate: new Date().getTime(),
         expiryDate: function () {
           const newDate = new Date(this.purchaseDate);

@@ -24,11 +24,11 @@ export function RecipiesList({
     const fetchRecipes = async function () {
       try {
         let response = await fetch(
-          `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${SPOONACULAR_API_KEY_1}&ingredients=${ingredients}&number=5`
+          `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${SPOONACULAR_API_KEY_1}&ingredients=${ingredients}&number=5&ignorePantry=true&ranking=2`
         );
         if (!response.ok)
           response = await fetch(
-            `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${SPOONACULAR_API_KEY_2}&ingredients=${ingredients}&number=5`
+            `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${SPOONACULAR_API_KEY_2}&ingredients=${ingredients}&number=5&ignorePantry=true&ranking=2`
           );
         if (!response.ok) {
           throw new Error("API request failed");
