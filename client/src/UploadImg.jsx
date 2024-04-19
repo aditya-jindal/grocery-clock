@@ -2,36 +2,32 @@ import { useState } from "react";
 import { Header } from "./Header";
 
 export function UploadImg({ setGroceries }) {
-  const [selectedFile, setSelectedFile] = useState(null);
-
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
+  const [file, setFile] = useState(null);
+  const handleFileChange = function (e) {
+    setFile(e.target.files[0]);
   };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("file", file);
 
-  const handleUpload = async () => {
     try {
-      if (!selectedFile) {
+      if (!file) {
         alert("Please select an image to upload.");
         return;
       }
 
-      const formData = new FormData();
-      formData.append("image", selectedFile);
-
-      const response = await fetch("http://192.168.134.95:8000/imgr/", {
+      const response = await fetch("http://127.0.0.1:5000/upload", {
         method: "POST",
         body: formData,
       });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
       const data = await response.json();
-
       console.log("Upload successful", data);
-      setGroceries((oldGroceries) => [...oldGroceries, ...data]);
-      setSelectedFile(null);
+      const new_groceries = {
+// todo
+      }
+      setGroceries((oldGroceries) => [...oldGroceries, ...new_groceries]);
     } catch (error) {
       console.error("Error uploading image", error);
     }
@@ -42,11 +38,14 @@ export function UploadImg({ setGroceries }) {
       <Header>New Groceries !</Header>
       <div>Upload an Image</div>
 
-      <div>
-        <input type="file" onChange={handleFileChange} />
-        <button onClick={handleUpload}>Upload</button>
-        {selectedFile && <p>Selected File: {selectedFile.name}</p>}
-      </div>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <input
+          type="file"
+          onChange={handleFileChange}
+          accept=".png, .jpg, .jpeg"
+        />
+        <button type="submit">Upload</button>
+      </form>
     </div>
   );
 }

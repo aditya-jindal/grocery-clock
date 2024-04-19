@@ -1,10 +1,8 @@
 export const tempGroceries = [
   {
     name: "cauliflower",
-    image: "https://i.pravatar.cc/47",
-    // qty: 250,
-    purchaseDate: new Date("2024-04-16").getTime(),
     shelfLife: 5,
+    purchaseDate: new Date("2024-04-16").getTime(),
     expiryDate: function () {
       const newDate = new Date(this.purchaseDate);
       newDate.setDate(newDate.getDate() + this.shelfLife);
@@ -13,10 +11,8 @@ export const tempGroceries = [
   },
   {
     name: "potato",
-    image: "https://i.pravatar.cc/48",
-    // qty: 500,
-    purchaseDate: new Date("2024-04-16").getTime(),
     shelfLife: 8,
+    purchaseDate: new Date("2024-04-16").getTime(),
     expiryDate: function () {
       const newDate = new Date(this.purchaseDate);
       newDate.setDate(newDate.getDate() + this.shelfLife);
@@ -25,10 +21,8 @@ export const tempGroceries = [
   },
   {
     name: "onion",
-    image: "https://i.pravatar.cc/49",
-    // qty: 750,
-    purchaseDate: new Date("2024-04-16").getTime(),
     shelfLife: 12,
+    purchaseDate: new Date("2024-04-16").getTime(),
     expiryDate: function () {
       const newDate = new Date(this.purchaseDate);
       newDate.setDate(newDate.getDate() + this.shelfLife);
@@ -37,8 +31,6 @@ export const tempGroceries = [
   },
   {
     name: "tomato",
-    image: "https://i.pravatar.cc/47",
-    // qty: 250,
     purchaseDate: new Date("2024-04-16").getTime(),
     shelfLife: 5,
     expiryDate: function () {
@@ -49,8 +41,6 @@ export const tempGroceries = [
   },
   {
     name: "brinjal",
-    image: "https://i.pravatar.cc/47",
-    // qty: 250,
     purchaseDate: new Date("2024-04-16").getTime(),
     shelfLife: 5,
     expiryDate: function () {
@@ -61,8 +51,6 @@ export const tempGroceries = [
   },
   {
     name: "peas",
-    image: "https://i.pravatar.cc/47",
-    // qty: 250,
     purchaseDate: new Date("2024-04-16").getTime(),
     shelfLife: 5,
     expiryDate: function () {
@@ -73,8 +61,6 @@ export const tempGroceries = [
   },
   {
     name: "cabbage",
-    image: "https://i.pravatar.cc/47",
-    // qty: 250,
     purchaseDate: new Date("2023-09-11").getTime(),
     shelfLife: 5,
     expiryDate: function () {
@@ -85,8 +71,6 @@ export const tempGroceries = [
   },
   {
     name: "watermelon",
-    image: "https://i.pravatar.cc/47",
-    // qty: 250,
     purchaseDate: new Date("2023-09-11").getTime(),
     shelfLife: 5,
     expiryDate: function () {
@@ -97,8 +81,6 @@ export const tempGroceries = [
   },
   {
     name: "orange",
-    image: "https://i.pravatar.cc/47",
-    // qty: 250,
     purchaseDate: new Date("2023-09-11").getTime(),
     shelfLife: 5,
     expiryDate: function () {
@@ -109,8 +91,6 @@ export const tempGroceries = [
   },
   {
     name: "apple",
-    image: "https://i.pravatar.cc/47",
-    // qty: 250,
     purchaseDate: new Date("2023-09-11").getTime(),
     shelfLife: 5,
     expiryDate: function () {
@@ -121,8 +101,6 @@ export const tempGroceries = [
   },
   {
     name: "peach",
-    image: "https://i.pravatar.cc/47",
-    // qty: 250,
     purchaseDate: new Date("2023-09-11").getTime(),
     shelfLife: 5,
     expiryDate: function () {
