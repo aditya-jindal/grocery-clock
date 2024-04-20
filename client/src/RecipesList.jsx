@@ -4,10 +4,10 @@ import { RecipiePage } from "./RecipePage";
 import { Recipie } from "./Recipe";
 import Loader from "./Loader";
 
-// const SPOONACULAR_API_KEY_1 = import.meta.env.VITE_APP_SPOONACULAR_API_KEY_1;
-// const SPOONACULAR_API_KEY_2 = import.meta.env.VITE_APP_SPOONACULAR_API_KEY_2;
-const SPOONACULAR_API_KEY_1 = "";
-const SPOONACULAR_API_KEY_2 = "";
+const SPOONACULAR_API_KEY_1 = import.meta.env.VITE_APP_SPOONACULAR_API_KEY_1;
+const SPOONACULAR_API_KEY_2 = import.meta.env.VITE_APP_SPOONACULAR_API_KEY_2;
+// const SPOONACULAR_API_KEY_1 = "";
+// const SPOONACULAR_API_KEY_2 = "";
 
 export function RecipiesList({
   recipies,
