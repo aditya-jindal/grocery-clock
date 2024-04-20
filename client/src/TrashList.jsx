@@ -3,9 +3,8 @@ import { TrashGrocery } from "./TrashGrocery";
 
 export function TrashList({ setGroceries, trash, setTrash }) {
   return (
-    <div>
+    <div className="w-1/2">
       <Header>The Trash !</Header>{" "}
-      {/* <h1 style={{ textAlign: "center" }}>YEETUS DELETUS</h1> */}
       {trash.length ? (
         <div>
           {trash.map((grocery, index) => (
