@@ -11,7 +11,7 @@ export function RecipiePage({ recipie, setShowRecipie }) {
       <Header>Your Cookbook!</Header>
       <button
         onClick={() => setShowRecipie(false)}
-        className="mb-4 text-amber-500 hover:text-amber-400 transition-colors mr-auto font-semibold"
+        className="mb-4 text-amber-500 hover:text-amber-400 transition-colors mr-auto font-semibold fixed left-0 p-4 mt-4 text-xl"
       >
         &larr; Go Back
       </button>
@@ -51,7 +51,7 @@ export function RecipiePage({ recipie, setShowRecipie }) {
           </button>
         </div>
       </div>
-      <div id="about" className="flex flex-col gap-y-16">
+      <div id="about" className="flex flex-col gap-y-16 min-h-screen">
         <div className="mt-28 flex flex-col gap-y-6">
           <h2 className="text-2xl font-bold">About</h2>
           <div
