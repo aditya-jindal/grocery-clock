@@ -9,7 +9,7 @@ export function GroceriesList({ groceries, setGroceries, trash, setTrash }) {
   console.log("sortedGroceries");
   console.log(sortedGroceries);
   return (
-    <div className="w-3/6">
+    <div className="w-3/6 flex flex-col items-center">
       <Header>The Fridge !</Header>
 
       {groceries.length ? (
@@ -25,7 +25,7 @@ export function GroceriesList({ groceries, setGroceries, trash, setTrash }) {
           ))}
         </div>
       ) : (
-        <p>Upload a receipt to get started</p>
+        <p className="text-xl mt-4">Upload a receipt to get started 📲</p>
       )}
     </div>
   );

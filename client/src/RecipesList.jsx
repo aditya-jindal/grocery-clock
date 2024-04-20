@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import { Header } from "./Header";
 import { RecipiePage } from "./RecipePage";
 import { Recipie } from "./Recipe";
+import Loader from "./Loader";
 
-const SPOONACULAR_API_KEY_1 = import.meta.env.VITE_APP_SPOONACULAR_API_KEY_1;
-const SPOONACULAR_API_KEY_2 = import.meta.env.VITE_APP_SPOONACULAR_API_KEY_2;
+// const SPOONACULAR_API_KEY_1 = import.meta.env.VITE_APP_SPOONACULAR_API_KEY_1;
+// const SPOONACULAR_API_KEY_2 = import.meta.env.VITE_APP_SPOONACULAR_API_KEY_2;
+const SPOONACULAR_API_KEY_1 = "";
+const SPOONACULAR_API_KEY_2 = "";
 
 export function RecipiesList({
   recipies,
@@ -17,6 +20,8 @@ export function RecipiesList({
   const sortedGroceries = groceries.sort(
     (a, b) => a.expiryDate() - b.expiryDate()
   );
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   useEffect(() => {
     const ingredients = sortedGroceries
       .slice(0, 4)
@@ -24,6 +29,8 @@ export function RecipiesList({
       .join(",");
     const fetchRecipes = async function () {
       try {
+        setLoading(true);
+        setError(false);
         let response = await fetch(
           `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${SPOONACULAR_API_KEY_1}&ingredients=${ingredients}&number=5&ignorePantry=true&ranking=2`
         );
@@ -36,7 +43,10 @@ export function RecipiesList({
         }
         const data = await response.json();
         setRecipeIDs(() => data.map((recipe) => recipe.id));
+        setLoading(false);
       } catch (error) {
+        setError(true);
+        setLoading(false);
         console.error("Error:", error);
       }
     };
@@ -46,6 +56,8 @@ export function RecipiesList({
   useEffect(() => {
     const getFullRecipe = async function (recipeID) {
       try {
+        setLoading(true);
+        setError(false);
         let response = await fetch(
           `https://api.spoonacular.com/recipes/${recipeID}/information?apiKey=${SPOONACULAR_API_KEY_1}&includeNutrition=false&addWinePairing=false&addTasteData=false`
         );
@@ -73,18 +85,26 @@ export function RecipiesList({
         };
         console.log("ans:");
         console.log(ans);
+        setLoading(false);
         return ans;
       } catch (error) {
+        setError(true);
+        setLoading(false);
         console.error("Error:", error);
       }
     };
     const fetchRecipes = async () => {
       try {
+        setLoading(true);
+        setError(false);
         const fullRecipes = await Promise.all(
           recipeIDs.map((recipeID) => getFullRecipe(recipeID))
         );
         setRecipes(fullRecipes);
+        setLoading(false);
       } catch (error) {
+        setError(true);
+        setLoading(false);
         console.error("Error:", error);
       }
     };
@@ -98,23 +118,26 @@ export function RecipiesList({
       <RecipiePage recipie={showRecipie} setShowRecipie={setShowRecipie} />
     </div>
   ) : (
-    <div>
+    <div className="flex flex-col items-center">
       <Header>Explore Recipes !</Header>
-
-      {recipies.length ? (
-        <div className="flex flex-col gap-y-4">
-          {recipies.map((recipie, index) => (
-            <Recipie
-              recipie={recipie}
-              setShowRecipie={setShowRecipie}
-              recipies={recipies}
-              key={index}
-            />
-          ))}
-        </div>
-      ) : (
-        <p>Upload a receipt to get started</p>
-      )}
+      {!error && loading && <Loader />}
+      {!recipies.length && error && <p className="text-xl mt-4">There was an error fetching recipes 🥲</p>}
+      {!error &&
+        !loading &&
+        (recipies.length ? (
+          <div className="flex flex-col gap-y-4">
+            {recipies.map((recipie, index) => (
+              <Recipie
+                recipie={recipie}
+                setShowRecipie={setShowRecipie}
+                recipies={recipies}
+                key={index}
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="text-xl mt-4">Upload a receipt to get started 📲</p>
+        ))}
     </div>
   );
 }

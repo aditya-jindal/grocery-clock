@@ -3,7 +3,7 @@ import { TrashGrocery } from "./TrashGrocery";
 
 export function TrashList({ setGroceries, trash, setTrash }) {
   return (
-    <div className="w-1/2">
+    <div className="w-1/2 flex flex-col items-center">
       <Header>The Trash !</Header>{" "}
       {trash.length ? (
         <div>
@@ -18,7 +18,7 @@ export function TrashList({ setGroceries, trash, setTrash }) {
           ))}
         </div>
       ) : (
-        <p>Wow so many fresh groceries</p>
+        <p className="text-xl mt-4 ">Woah so many fresh groceries 😮</p>
       )}
     </div>
   );

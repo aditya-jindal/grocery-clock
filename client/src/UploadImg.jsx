@@ -54,7 +54,7 @@ export function UploadImg({ setGroceries }) {
     <div className="flex flex-col items-center w-4/6">
       <Header>New Groceries !</Header>
       <h2 className="text-2xl font-semibold mt-[-1rem] mb-20">
-        Upload an Image
+        Upload an Image 📲
       </h2>
 
       <form

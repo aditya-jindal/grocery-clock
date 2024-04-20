@@ -59,7 +59,7 @@ export function Login({ setIsSubmitted }) {
               id="username"
               type="text"
               name="uname"
-              placeholder="aditya"
+              placeholder="username"
               defaultValue={"aditya"}
               required
             />
