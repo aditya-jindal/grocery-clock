@@ -6,16 +6,23 @@ export function Grocery({ grocery, setGroceries, setTrash }) {
   };
   if (expired) moveToTrash();
   return (
-    <div>
-      <h1>{grocery.name}</h1>
-      <p>
-        Use Within{" "}
-        {Math.floor(
-          (grocery.expiryDate() - Date.now()) / (1000 * 60 * 60 * 24)
-        )}{" "}
-        day(s)
-      </p>
-      <button onClick={() => moveToTrash()}>Trash</button>
+    <div className="bg-white shadow-md rounded-lg p-6 px-8 mb-4 w-full flex justify-between">
+      <div className="flex flex-col">
+        <h1 className="text-2xl font-bold mb-2 capitalize">{grocery.name}</h1>
+        <p className="text-gray-700">
+          Use Within:{" "}
+          {Math.floor(
+            (grocery.expiryDate() - Date.now()) / (1000 * 60 * 60 * 24)
+          )}{" "}
+          day(s)
+        </p>
+      </div>
+      <button
+        onClick={() => moveToTrash()}
+        className="bg-yellow-400 hover:bg-yellow-300 transition-colors text-center text-white font-semibold px-8 rounded-lg text-xl"
+      >
+        Trash 🗑️
+      </button>
     </div>
   );
 }

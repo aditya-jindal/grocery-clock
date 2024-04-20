@@ -9,8 +9,8 @@ export function GroceriesList({ groceries, setGroceries, trash, setTrash }) {
   console.log("sortedGroceries");
   console.log(sortedGroceries);
   return (
-    <div>
-      <Header>The Fridge!</Header>
+    <div className="w-3/6">
+      <Header>The Fridge !</Header>
 
       {groceries.length ? (
         <div>
