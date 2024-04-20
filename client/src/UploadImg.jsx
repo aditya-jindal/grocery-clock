@@ -21,7 +21,7 @@ export function UploadImg({ setGroceries }) {
         return;
       }
       setLoading(true);
-      const response = await fetch("http://127.0.0.1:5000/upload", {
+      const response = await fetch("https://grocery-clock.onrender.com/upload", {
         method: "POST",
         body: formData,
       });
