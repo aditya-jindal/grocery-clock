@@ -64,7 +64,7 @@ export function RecipiesList({
           name: data.title,
           ingredients: data.extendedIngredients.map((ingredient) => [
             ingredient.name,
-            `${ingredient.amount}${ingredient.unit}`,
+            `${ingredient.amount} ${ingredient.unit}`,
           ]),
           image: data.image,
           prepTime: data.readyInMinutes,
@@ -94,7 +94,7 @@ export function RecipiesList({
   console.log("recipies:");
   console.log(recipies);
   return showRecipie ? (
-    <div>
+    <div className="flex justify-center">
       <RecipiePage recipie={showRecipie} setShowRecipie={setShowRecipie} />
     </div>
   ) : (

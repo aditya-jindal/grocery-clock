@@ -40,3 +40,9 @@
     background-position: 0% 50%, 50% 50%, 100% 100%;
   }
 }
+
+#about a{
+  color: rgb(42, 98, 241);
+  text-decoration: underline;
+  
+}
