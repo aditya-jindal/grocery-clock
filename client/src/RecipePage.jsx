@@ -11,7 +11,7 @@ export function RecipiePage({ recipie, setShowRecipie }) {
       <Header>Your Cookbook!</Header>
       <button
         onClick={() => setShowRecipie(false)}
-        className="mb-4 text-amber-400 mr-auto font-semibold"
+        className="mb-4 text-amber-500 hover:text-amber-400 transition-colors mr-auto font-semibold"
       >
         &larr; Go Back
       </button>

@@ -46,28 +46,56 @@ export function UploadImg({ setGroceries }) {
       setSuccess(true);
     } catch (error) {
       setError(true);
+      setLoading(false);
       console.error("Error uploading image", error);
     }
   };
   return (
-    <div>
+    <div className="flex flex-col items-center w-4/6">
       <Header>New Groceries !</Header>
-      <div>Upload an Image</div>
+      <h2 className="text-2xl font-semibold mt-[-1rem] mb-20">
+        Upload an Image
+      </h2>
 
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <input
-          type="file"
-          onChange={handleFileChange}
-          accept=".png, .jpg, .jpeg"
-        />
-        <button type="submit" disabled={loading}>
+      <form
+        onSubmit={(e) => handleSubmit(e)}
+        className="flex flex-col gap-y-4 w-3/6"
+      >
+        <div className="flex gap-x-6">
+          <input
+            type="file"
+            id="fileInput"
+            onChange={handleFileChange}
+            accept=".png, .jpg, .jpeg"
+            className="hidden"
+          />
+          <label
+            htmlFor="fileInput"
+            className="bg-yellow-400 hover:bg-yellow-300 transition-colors text-center text-white font-semibold px-8 py-2 rounded-lg text-xl cursor-pointer"
+          >
+            Choose File
+          </label>
+          {file && <p className="mt-2 text-sm text-gray-500">{file.name}</p>}
+        </div>
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="bg-yellow-400 hover:bg-yellow-300 transition-colors text-center text-white font-semibold px-8 py-2 rounded-lg text-xl"
+        >
           Upload
         </button>
       </form>
-      {loading && <Loader />}
-      {error && <p>Failed to add groceries to the fridge 😢!</p>}
+      {!error && loading && <Loader />}
+      {error && (
+        <p className="mt-8 text-xl">
+          Failed to add groceries to the fridge 😢!
+        </p>
+      )}
       {!error && success && (
-        <p>New groceries added successfully to the fridge 😋!</p>
+        <p className="mt-8 text-xl">
+          New groceries added successfully to the fridge 😋!
+        </p>
       )}
     </div>
   );
