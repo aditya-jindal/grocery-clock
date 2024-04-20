@@ -13,7 +13,7 @@ export function GroceriesList({ groceries, setGroceries, trash, setTrash }) {
       <Header>The Fridge !</Header>
 
       {groceries.length ? (
-        <div>
+        <div className="w-full">
           {sortedGroceries.map((grocery, index) => (
             <Grocery
               grocery={grocery}

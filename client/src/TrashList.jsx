@@ -6,7 +6,7 @@ export function TrashList({ setGroceries, trash, setTrash }) {
     <div className="w-1/2 flex flex-col items-center">
       <Header>The Trash !</Header>{" "}
       {trash.length ? (
-        <div>
+        <div className="w-full">
           {trash.map((grocery, index) => (
             <TrashGrocery
               grocery={grocery}
