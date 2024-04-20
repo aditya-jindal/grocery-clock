@@ -11,7 +11,7 @@ export function RecipiePage({ recipie, setShowRecipie }) {
       <Header>Your Cookbook!</Header>
       <button
         onClick={() => setShowRecipie(false)}
-        className="mb-4 text-red-400 mr-auto"
+        className="mb-4 text-amber-400 mr-auto font-semibold"
       >
         &larr; Go Back
       </button>
@@ -22,7 +22,7 @@ export function RecipiePage({ recipie, setShowRecipie }) {
           className="w-full h-full rounded-lg"
         />
         <div className="absolute bottom-0 text-center bg-slate-100 h-2/5 w-3/6 p-4 rounded-t-md flex flex-col justify-between items-center">
-          <h1 className="text-2xl font-bold text-red-600">{recipie.name}</h1>
+          <h1 className="text-2xl font-bold text-amber-500">{recipie.name}</h1>
           <div className="flex gap-x-4 justify-center">
             <p>
               ⏰:{" "}
@@ -34,7 +34,7 @@ export function RecipiePage({ recipie, setShowRecipie }) {
             </p>
           </div>
           <button
-            className="bg-red-500 text-white rounded-md p-2 w-4/6"
+            className="bg-yellow-500 hover:bg-yellow-400 transition-colors text-white rounded-md p-2 w-4/6 font-semibold"
             onClick={() => {
               const summaryElement = document.getElementById("about");
               const elementPosition =
