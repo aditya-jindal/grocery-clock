@@ -4,10 +4,29 @@ import { RecipiePage } from "./RecipePage";
 import { Recipie } from "./Recipe";
 import Loader from "./Loader";
 
-const SPOONACULAR_API_KEY_1 = import.meta.env.VITE_APP_SPOONACULAR_API_KEY_1;
-const SPOONACULAR_API_KEY_2 = import.meta.env.VITE_APP_SPOONACULAR_API_KEY_2;
+let SPOONACULAR_API_KEY_1 = import.meta.env.VITE_APP_SPOONACULAR_API_KEY_1;
+let SPOONACULAR_API_KEY_2 = import.meta.env.VITE_APP_SPOONACULAR_API_KEY_2;
 // const SPOONACULAR_API_KEY_1 = "";
 // const SPOONACULAR_API_KEY_2 = "";
+// if api keys starts and ends with %, remove them
+if (
+  SPOONACULAR_API_KEY_1.startsWith("%") &&
+  SPOONACULAR_API_KEY_1.endsWith("%")
+) {
+  SPOONACULAR_API_KEY_1 = SPOONACULAR_API_KEY_1.slice(
+    1,
+    SPOONACULAR_API_KEY_1.length - 1
+  );
+}
+if (
+  SPOONACULAR_API_KEY_2.startsWith("%") &&
+  SPOONACULAR_API_KEY_2.endsWith("%")
+) {
+  SPOONACULAR_API_KEY_2 = SPOONACULAR_API_KEY_2.slice(
+    1,
+    SPOONACULAR_API_KEY_2.length - 1
+  );
+}
 
 export function RecipiesList({
   recipies,
