@@ -9,14 +9,38 @@ function NavBar({ isSubmitted, handleLogout }) {
           <span className="font-semibold">Clock</span>
         </NavLink>
         {isSubmitted && (
-          <div className="flex justify-around w-3/6 items-center ">
-            <NavLink to="/recipes">Recipes</NavLink>
-            <NavLink to="/groceries">Fridge</NavLink>
-            <NavLink to="/trash">Trash</NavLink>
-            <NavLink to="/uploadImg">Upload Reciept</NavLink>
-            <NavLink to="/" onClick={handleLogout}>
-              Logout
+          <div className="flex justify-around w-3/6 items-center">
+            <NavLink
+              to="/recipes"
+              className="border-b-2 border-transparent hover:border-current transition-all duration-300 ease-in-out"
+            >
+              Recipes
             </NavLink>
+            <NavLink
+              to="/groceries"
+              className="border-b-2 border-transparent hover:border-current transition-all duration-300 ease-in-out"
+            >
+              Fridge
+            </NavLink>
+            <NavLink
+              to="/trash"
+              className="border-b-2 border-transparent hover:border-current transition-all duration-300 ease-in-out"
+            >
+              Trash
+            </NavLink>{" "}
+            <NavLink
+              to="/uploadImg"
+              className="border-b-2 border-transparent hover:border-current transition-all duration-300 ease-in-out"
+            >
+              Upload Reciept
+            </NavLink>
+            <NavLink
+              to="/"
+              onClick={handleLogout}
+              className="border-b-2 border-transparent hover:border-current transition-all duration-300 ease-in-out"
+            >
+              Logout
+            </NavLink>{" "}
           </div>
         )}
       </ul>
