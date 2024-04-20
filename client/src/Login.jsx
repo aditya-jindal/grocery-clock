@@ -60,7 +60,7 @@ export function Login({ setIsSubmitted }) {
               type="text"
               name="uname"
               placeholder="username"
-              defaultValue={"aditya"}
+              // defaultValue={"aditya"}
               required
             />
             {renderErrorMessage("uname")}
