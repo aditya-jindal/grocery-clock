@@ -121,23 +121,27 @@ export function RecipiesList({
     <div className="flex flex-col items-center">
       <Header>Explore Recipes !</Header>
       {!error && loading && <Loader />}
-      {!recipies.length && error && <p className="text-xl mt-4">There was an error fetching recipes 🥲</p>}
-      {!error &&
+      {Boolean(recipies.length) && error && (
+        <p className="text-xl mt-4">There was an error fetching recipes 🥲</p>
+      )}
+      {
+        //!error &&
         !loading &&
-        (recipies.length ? (
-          <div className="flex flex-col gap-y-4">
-            {recipies.map((recipie, index) => (
-              <Recipie
-                recipie={recipie}
-                setShowRecipie={setShowRecipie}
-                recipies={recipies}
-                key={index}
-              />
-            ))}
-          </div>
-        ) : (
-          <p className="text-xl mt-4">Upload a receipt to get started 📲</p>
-        ))}
+          (recipies.length ? (
+            <div className="flex flex-col gap-y-4">
+              {recipies.map((recipie, index) => (
+                <Recipie
+                  recipie={recipie}
+                  setShowRecipie={setShowRecipie}
+                  recipies={recipies}
+                  key={index}
+                />
+              ))}
+            </div>
+          ) : (
+            <p className="text-xl mt-4">Upload a receipt to get started 📲</p>
+          ))
+      }
     </div>
   );
 }
