@@ -8,7 +8,7 @@ import { UploadImg } from "./UploadImg";
 import { tempGroceries, tempRecipies } from "./test_data";
 import NavBar from "./NavBar";
 
-const TESTING = true;
+const TESTING = false;
 
 export default function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
