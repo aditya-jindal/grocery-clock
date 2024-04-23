@@ -140,9 +140,9 @@ export function RecipiesList({
     <div className="flex flex-col items-center">
       <Header>Explore Recipes !</Header>
       {!error && loading && <Loader />}
-      {Boolean(recipies.length) && error && (
+      {/* {Boolean(recipies.length) && error && (
         <p className="text-xl mt-4">There was an error fetching recipes 🥲</p>
-      )}
+      )} */}
       {
         //!error &&
         !loading &&
